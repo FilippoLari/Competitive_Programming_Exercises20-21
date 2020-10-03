@@ -4,7 +4,7 @@
 using namespace std;
 
 /*
-	The algorithm read the input and make an array of tuples
+	The algorithm read the input and makes an array of tuples
 	(i, j, str) which denotes the strenght of a team composed by i and j.
 	Then, sorts this array by the strenght value and start making teams
 	from the strongest one to the weakest one, keeping track of which people
