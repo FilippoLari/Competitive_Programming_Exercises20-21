@@ -1,5 +1,5 @@
 /*
-    the algorithm traverse the tree recursively.
+    the algorithm traverse the tree in a post-order way.
     For each node it computes the maximum path sum 
     from it to the leafs of the left and right subtree.
     
