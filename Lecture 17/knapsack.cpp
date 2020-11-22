@@ -5,9 +5,9 @@ using namespace std;
 /*
  * The algorithm builds a table dp such that
  * for each (i,j) dp[i][j] is the maximum value it can obtain
- * with i items and a knapsack os size j.
+ * with i items and a knapsack of size j.
  * 
- * The table is filled up in this way, if w[i] > j it can't choose
+ * The table is filled in this way, if w[i] > j it can't choose
  * item i, hence dp[i][j] = dp[i-1][j]. Otherwise it look at the maximum
  * value that it can obtain by choosing item i or not, hence 
  * dp[i][j] = max(dp[i-1[j], v[i]+dp[i-1][j-w[i]]).
@@ -15,7 +15,7 @@ using namespace std;
  * The result is contained in dp[n][S] where S is the size of the knapsack and
  * n the number of items.
  * 
- * Time: each position of dp is filled in constant time therefore
+ * Time: each position of dp is filled in constant time, therefore
  *       the time required for computing dp[n][S] is theta(n*S).
  * Space: theta(n*S)
  */
