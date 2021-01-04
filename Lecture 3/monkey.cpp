@@ -9,9 +9,6 @@ using namespace std;
     the sequence of results is monotone, so we can use binary search
     to find the minimum k, obtaining an algorithm whose execution time is
     O(nlogn).
-    
-    P.S: the solution is not accepted by the site, i think the reasoning
-         is correct, but i can't find what i'm missing in the implementation.
 */
  
 bool check(const vector<int> &r, int n, int k)
