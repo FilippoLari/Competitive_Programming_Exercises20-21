@@ -10,7 +10,7 @@ using namespace std;
 	one tower keeping track of the maximal height.
 	
 	Time:  O(nlogn) because of sorting.
-	Space: O(1) assuming the sort procedure doesn't use any extra space. 
+	Space: O(1). 
 */
 
 int main()
