@@ -11,7 +11,7 @@ using namespace std;
 	have not yet been selected.
 	
 	Time: O(n^2log(n)) as we sort an array of length bin(2*n, 2) = n*(2*n-1) = O(n^2).
-	Space: theta(n) assuming sort doesn't use any extra space.
+	Space: theta(n).
 */
 
 bool sortby(const tuple<int,int,int> &a, const tuple<int,int,int> &b)
