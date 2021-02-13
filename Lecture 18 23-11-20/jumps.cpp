@@ -15,17 +15,23 @@ using namespace std;
  * equal to the distance between i and j. In this way
  * the minimum number of jumps required to reach position i
  * is equal to the minimum number of jumps to reach the node
- * connected to i with maximum weight plus one. The algorithm
- * below implement this idea using an array 'dp' of size n.
+ * connected to i with maximum weight plus one. The function
+ * minJumps1 implement this idea using an array 'dp' of size n.
  * 
  * Time: in the worst case for each position  1<=i<=n-1 the algorithm
          examine i positions, hence the running time is O(n^2).
  * Space: theta(n)
+ *
+ * Unfortunately a quadratic running time is not enougth to get accepted, and
+ * i was not able to find the linear time solution. The function 
+ * minJumps is an implementation from: 
+ *
+ * https://www.geeksforgeeks.org/minimum-number-jumps-reach-endset-2on-solution/
  */
 
 
 // Function to return minimum number of jumps to end of array
-int minJumps(int arr[], int n){
+int minJumps1(int arr[], int n){
     
     if(arr[0]==0) return -1;
     if(arr[0]>=n) return 1;
@@ -53,6 +59,39 @@ int minJumps(int arr[], int n){
     }
     
     return dp[n-1];
+}
+
+int minJumps(int arr[], int n)
+{
+    if (n <= 1)
+        return 0;
+
+    if (arr[0] == 0)
+        return -1;
+
+    int maxReach = arr[0];
+    int step = arr[0];
+
+    int jump = 1;
+ 
+    int i = 1;
+    for (i = 1; i < n; i++) {
+        if (i == n - 1)
+            return jump;
+ 
+        maxReach = max(maxReach, i + arr[i]);
+ 
+        step--;
+
+        if (step == 0) {
+            jump++;
+            if (i >= maxReach)
+                return -1;
+            step = maxReach - i;
+        }
+    }
+ 
+    return -1;
 }
 
 
