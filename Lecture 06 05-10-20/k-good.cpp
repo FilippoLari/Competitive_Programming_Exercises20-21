@@ -20,7 +20,7 @@ using namespace std;
 	could be keep updated in O(1) time.
 
 	Time: O(n)
-	Space: O(1)
+	Space: O(n)
 */
 
 int main(void)
